@@ -1,0 +1,40 @@
+{
+  "sites": [
+    {
+      "name": "Wiki",
+      "url": "https://wiki.comunion.io/",
+      "icon": "favicon.ico",
+      "group": "public"
+    },
+    {
+      "name": "BBS",
+      "url": "https://taiga.comunion.io",
+      "icon": "assets/favicon-ldaqi8fv.png",
+      "group": "public"
+    },
+    {
+      "name": "Taiga",
+      "url": "https://taiga.comunion.io",
+      "icon": "v-1600257936276/images/favicon.png",
+      "group": "develop"
+    },
+    {
+      "name": "石墨",
+      "url": "https://shimo.im/space/zvk9d8DwGGiGsnq2",
+      "icon": "https://assets.smcdn.cn/from_qbox/favicon.ico",
+      "group": "document"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/comunion-io",
+      "icon": "https://github.githubassets.com/favicons/favicon.png",
+      "group": "develop"
+    },
+    {
+      "name": "产品原型",
+      "url": "https://axhub.im/pro/b5c59dfcf267caa2/#g=1&c=1&p=comunion-___",
+      "icon": "favicon.ico",
+      "group": "develop"
+    }
+  ]
+}
