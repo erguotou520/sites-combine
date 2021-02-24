@@ -39,7 +39,7 @@ export default defineComponent({
     })
 
     return () => (
-      <div class="pt-4 px-4">
+      <div class="pt-4 px-4 bg-white">
         {sites.value.map(([group, _sites]) => (
           <div key={group} class={props.tiny ? 'mb-4' : 'mb-8'}>
             <p class={`mb-${props.tiny ? '2' : '4'} text-gray-400 text-lg`}>{group}</p>

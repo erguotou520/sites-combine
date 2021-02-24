@@ -1,4 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue'
+import SitesLayout from './components/SitesLayout'
 import SitesWrap from './components/SitesWrap'
 import './styles/main.css'
 import { Site } from './types/data'
@@ -20,8 +21,10 @@ export default defineComponent({
     return () => {
       const tinyMode = openedSites.value.length > 0
       return (
-        <div class={`${tinyMode ? '' : 'max-w-screen-md'} mx-auto`}>
+        <div class={`${tinyMode ? '' : 'max-w-screen-md'} mx-auto h-screen flex flex-col`}>
+          {openedSites.value.length}
           <SitesWrap tiny={tinyMode} onOpened={onOpened} onClosed={onClosed} />
+          <SitesLayout openedSites={openedSites.value} />
         </div>
       )
     }

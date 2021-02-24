@@ -41,9 +41,9 @@ export default defineComponent({
           ],
           strategy: 'fixed'
         })
-        onClickOutside(triggerRef.value.children[0], () => {
-          visible.value = false
-        })
+        // onClickOutside(triggerRef.value.children[0], () => {
+        //   visible.value = false
+        // })
       })
     })
 
