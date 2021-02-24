@@ -38,8 +38,17 @@ export default defineComponent({
       }
     })
 
+    const onClick =  (site: Site, e: MouseEvent) => {
+      e.preventDefault()
+      if (site.external || e.ctrlKey || e.metaKey) {
+        window.open(site.url, site.name)
+      } else {
+        props.onOpened?.(site)
+      }
+    }
+
     return () => (
-      <div class="pt-4 px-4 bg-white">
+      <div class="pt-4 px-4">
         {sites.value.map(([group, _sites]) => (
           <div key={group} class={props.tiny ? 'mb-4' : 'mb-8'}>
             <p class={`mb-${props.tiny ? '2' : '4'} text-gray-400 text-lg`}>{group}</p>
@@ -49,7 +58,7 @@ export default defineComponent({
                   class={`flex flex-col items-center content-center mr-4 ${
                     props.tiny ? 'px-2' : 'p-2'
                   } transition duration-300 border-b-2 border-transparent hover:border-indigo-700`}
-                  onClick={() => props.onOpened?.(site)}
+                  onClick={(e) => onClick(site, e)}
                 >
                   <img src={getSiteIcon(site)} class="rounded" width="32" height="32" />
                   <span class="mt-2 text-gray-700">{site.name}</span>

@@ -1,6 +1,6 @@
 import { defineComponent, nextTick, onMounted, ref } from 'vue'
 import { createPopper, Instance } from '@popperjs/core'
-import { onClickOutside } from '@vueuse/core'
+// import { onClickOutside } from '../hooks'
 
 export default defineComponent({
   name: 'Popper',
@@ -19,6 +19,8 @@ export default defineComponent({
     const triggerRef = ref()
 
     let popperInstance: Instance
+
+    // let stopOutside: () => void
 
     const toggleVisible = () => {
       visible.value = !visible.value
@@ -41,11 +43,15 @@ export default defineComponent({
           ],
           strategy: 'fixed'
         })
-        // onClickOutside(triggerRef.value.children[0], () => {
+        // stopOutside = onClickOutside([triggerRef.value.children[0], contentRef.value], () => {
         //   visible.value = false
         // })
       })
     })
+
+    // onUnmounted(() => {
+    //   stopOutside?.()
+    // })
 
     return () => {
       return (

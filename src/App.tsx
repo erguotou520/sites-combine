@@ -7,10 +7,12 @@ import { Site } from './types/data'
 export default defineComponent({
   name: 'App',
   props: {},
-  setup(props, ctx) {
+  setup() {
     const openedSites = ref<Site[]>([])
     const onOpened = (site: Site) => {
-      openedSites.value.push(site)
+      if (openedSites.value.every(s => s.name !== site.name)) {
+        openedSites.value.push(site)
+      }
     }
     const onClosed = (site: Site) => {
       const index = openedSites.value.indexOf(site)
@@ -22,7 +24,6 @@ export default defineComponent({
       const tinyMode = openedSites.value.length > 0
       return (
         <div class={`${tinyMode ? '' : 'max-w-screen-md'} mx-auto h-screen flex flex-col`}>
-          {openedSites.value.length}
           <SitesWrap tiny={tinyMode} onOpened={onOpened} onClosed={onClosed} />
           <SitesLayout openedSites={openedSites.value} />
         </div>
