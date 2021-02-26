@@ -5,4 +5,6 @@ export interface Site {
   group: string
   // 只能外链打开 不能iframe嵌套 例如github
   external?: boolean
+  // service worker脚本
+  worker?: string
 }

@@ -3,38 +3,40 @@
     {
       "name": "Wiki",
       "url": "https://wiki.comunion.io/",
-      "icon": "favicon.ico",
-      "group": "public"
+      "icon": "https://gblobscdn.gitbook.com/spaces%2F-LnzGGFkn2Yk6Rej1ass%2Favatar-1612314887569.png?alt=media",
+      "group": "Public"
     },
     {
       "name": "BBS",
-      "url": "https://taiga.comunion.io",
+      "url": "https://bbs.comunion.io",
       "icon": "assets/favicon-ldaqi8fv.png",
-      "group": "public"
+      "group": "Public"
     },
     {
       "name": "Taiga",
       "url": "https://taiga.comunion.io",
       "icon": "v-1600257936276/images/favicon.png",
-      "group": "develop"
+      "group": "Develop"
     },
     {
       "name": "石墨",
       "url": "https://shimo.im/space/zvk9d8DwGGiGsnq2",
       "icon": "https://assets.smcdn.cn/from_qbox/favicon.ico",
-      "group": "document"
+      "group": "Document"
     },
     {
       "name": "Github",
       "url": "https://github.com/comunion-io",
       "icon": "https://github.githubassets.com/favicons/favicon.png",
-      "group": "develop"
+      "group": "Develop",
+      "worker": "github"
     },
     {
       "name": "产品原型",
       "url": "https://axhub.im/pro/b5c59dfcf267caa2/#g=1&c=1&p=comunion-___",
       "icon": "favicon.ico",
-      "group": "develop"
+      "group": "Develop",
+      "worker": "axhub"
     }
   ]
 }

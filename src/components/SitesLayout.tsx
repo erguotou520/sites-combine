@@ -2,6 +2,25 @@ import { defineComponent, PropType } from 'vue'
 import { Site } from '../types/data'
 import Website from './Site'
 
+function calcSiteWidth(len: number) {
+  if (len <= 1) {
+    return ['100%']
+  }
+  if (len === 2) {
+    return ['50%', '50%']
+  }
+  if (len === 3) {
+    return ['33.333%', '33.333%', '33.333%']
+  }
+  if (len === 4) {
+    return ['50%', '50%', '50%', '50%']
+  }
+  if (len === 5) {
+    return ['33.333%', '33.333%', '33.333%', '50%', '50%']
+  }
+  return ['33.333%', '33.333%', '33.333%', '33.333%', '33.333%', '33.333%']
+}
+
 export default defineComponent({
   name: 'SitesLayout',
   props: {
@@ -13,26 +32,12 @@ export default defineComponent({
   setup(props, ctx) {
     return () => {
       const len = props.openedSites.length
-      if (len <= 3) {
-        return (
-          <div class="flex flex-1">
-            {props.openedSites.map(site => (
-              <Website class="flex-1" key={site.name} url={site.url} />
-            ))}
-          </div>
-        )
-      }
-      const firstCols = len <= 5 ? 2 : 3
+      const widthList = calcSiteWidth(len)
       return (
         <>
-          <div class="flex flex-1">
-            {props.openedSites.slice(0, firstCols).map(site => (
-              <Website class="flex-1" key={site.name} url={site.url} />
-            ))}
-          </div>
-          <div class="flex flex-1">
-            {props.openedSites.slice(firstCols).map(site => (
-              <Website class="flex-1" key={site.name} url={site.url} />
+          <div class="flex flex-1 flex-wrap">
+            {props.openedSites.map((site, index) => (
+              <Website key={site.name} site={site} style={{ width: widthList[index] }} />
             ))}
           </div>
         </>

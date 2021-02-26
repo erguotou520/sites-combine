@@ -8,6 +8,9 @@ export default defineComponent({
   name: 'App',
   props: {},
   setup() {
+    navigator.serviceWorker.register(`/worker/github.js`).then(() => {
+      console.log('install 11')
+    })
     const openedSites = ref<Site[]>([])
     const onOpened = (site: Site) => {
       if (openedSites.value.every(s => s.name !== site.name)) {
